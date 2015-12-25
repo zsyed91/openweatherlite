@@ -1,5 +1,5 @@
-require "openweather/version"
+require 'json'
+require 'rest-client'
 
-module Openweather
-  # Your code goes here...
-end
+require 'openweather/version'
+require 'openweather/forecast'
