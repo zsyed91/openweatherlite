@@ -1,10 +1,10 @@
-module Openweather
+module OpenWeatherLite
   # Look up current weather conditions by available api calls
   #   all methods return parsed json response objects
   class Weather
     VERSION = '2.5'
     BASE_URL = 'http://api.openweathermap.org/data/'
-    attr_accessor :version, :api_key
+    attr_accessor :version, :api_key, :units
 
     def initialize(api_key = nil)
       @api_key = api_key
@@ -15,13 +15,23 @@ module Openweather
       run(zip: "#{zip_code},#{country}")
     end
 
+    def by_city_id(city_id)
+      run(id: city_id)
+    end
+
+    def by_coords(latitude, longitude)
+      run(lat: latitude, lon: longitude)
+    end
+
     private
 
-    def run(params = nil)
+    def run(params)
+      fail ArgumentError, 'Missing api key' unless @api_key
       params[:appid] = @api_key
+      params[:units] = @units if @units
 
       response = RestClient::Request.execute(method: :get, url: url(params))
-      JSON.parse(response, symbolize_names: true)
+      WeatherResponse.new(response)
     end
 
     def url(params)

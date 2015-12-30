@@ -1,20 +1,20 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'openweather/version'
+require 'open_weather_lite/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'openweather'
-  spec.version       = Openweather::VERSION
+  spec.version       = OpenWeatherLite::VERSION
   spec.authors       = ['Zshawn Syed']
   spec.email         = ['zsyed91@gmail.com']
 
-  spec.summary       = 'Ruby wrapper for the OpenWeatherMap api'
+  spec.summary       = 'Simple ruby wrapper for the OpenWeatherMap api'
   spec.description   = 'Wrapper class for the OpenWeatherMap api.' \
                        'Provides a simple interface to the api calls.' \
                        'Api version is configurable. Only dependency is the api key!'
 
-  spec.homepage      = 'https://github.com/zsyed91/openweather'
+  spec.homepage      = 'https://github.com/zsyed91/open_weather_lite'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
