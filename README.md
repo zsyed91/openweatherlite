@@ -1,6 +1,7 @@
-# Openweather
+# OpenWeatherLite
+[![Build Status](https://travis-ci.org/zsyed91/openweatherlite.svg)](https://travis-ci.org/zsyed91/openweatherlite)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/openweather`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/openweatherlite`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 TODO: Delete this and the text above, and describe your gem
 
@@ -9,7 +10,7 @@ TODO: Delete this and the text above, and describe your gem
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'openweather'
+gem 'openweatherlite'
 ```
 
 And then execute:
@@ -18,7 +19,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install openweather
+    $ gem install openweatherlite
 
 ## Usage
 
