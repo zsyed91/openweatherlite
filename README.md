@@ -24,7 +24,7 @@ Or install it yourself as:
 
 ## Example
 
-```
+```ruby
   weather = OpenWeatherLite::Weather.new('api_key')
   weather.by_zip_code(60606)
 ```
@@ -41,7 +41,7 @@ This class is the api class for openweather
 #### initialize
 Provide an optional api_key
 
-```
+```ruby
   # With optional api_key
   OpenWeatherLite::Weather.new('api_key')
 
@@ -53,7 +53,7 @@ Provide an optional api_key
 #### by_zip_code
 Provide `zip_code` and optionally `country`. `country` defaults to `us`. Returns `OpenWeatherLite::WeatherResponse`
 
-```
+```ruby
   weather = OpenWeatherLite::Weather.new('api_key')
   # returns OpenWeatherLite::WeatherResponse
   response = weather.by_zip_code(60606)
@@ -62,7 +62,7 @@ Provide `zip_code` and optionally `country`. `country` defaults to `us`. Returns
 #### by_city_id
 Provide a `city_id` according to openweathermap and returns `OpenWeatherLite::WeatherResponse`
 
-```
+```ruby
   # returns OpenWeatherLite::WeatherResponse
   weather.by_city_id(2172797)
 ```
@@ -70,7 +70,7 @@ Provide a `city_id` according to openweathermap and returns `OpenWeatherLite::We
 #### by_coords
 Provide `latitude` and `longitude` and returns `OpenWeatherLite::WeatherResponse`
 
-```
+```ruby
 # returns OpenWeatherLite::WeatherResponse
   weather.by_coords(35, 139)
 ```
@@ -80,7 +80,7 @@ Provide `latitude` and `longitude` and returns `OpenWeatherLite::WeatherResponse
 #### coords
 Returns a hash of the coordinates
 
-```
+```ruby
   response.coords
   # { latitude: 123, longitude: 123 }
 ```
@@ -88,48 +88,48 @@ Returns a hash of the coordinates
 #### temperature
 Returns the temperature value from the reponse. Unit is in units provided by to `OpenWeatherLite::Weather`
 
-```
+```ruby
   response.temperature
 ```
 
 #### pressure
 Returns the pressure value from the response
 
-```
+```ruby
   response.pressure
 ```
 
 #### humidity
 Returns the humidity value from the response
 
-```
+```ruby
   response.humidity
 ```
 
 #### temperature_range
 Returns an `array` with the `[min, max]` values from the response
 
-```
+```ruby
   response.temperature_range
 ```
 
 #### wind
 Returns the wind details `hash` with `speed` and `deg` from the response
 
-```
+```ruby
   response.wind
 ```
 
 #### cloudy?
 Returns `true` or `false` if there are any clouds
 
-```
+```ruby
   response.cloudy?
 ```
 #### clouds
 Returns the percentage of clouds in a `hash`
 
-```
+```ruby
   response.clouds
 ```
 
@@ -138,21 +138,23 @@ Returns `true` or `false` depending on whether it is, or has rained in the past 
 
 #### rain
 Returns the amount that it has rained in the last 3 hours in a hash
-```
+
+```ruby
   response.rain
   # { '3h' => .445 }
 ```
+
 #### snow?
 Returns `true` or `false` depending on whether it is, or has rained in the past 3 hours
 
-```
+```ruby
   response.snowy?
 ```
 
 #### snow
 Returns the amount that it has snowed in the last 3 hours in a hash
 
-```
+```ruby
   response.snow
   # { '3h' => .445 }
 ```
@@ -160,14 +162,14 @@ Returns the amount that it has snowed in the last 3 hours in a hash
 #### sunrise
 Returns the time for sunrise today
 
-```
+```ruby
   response.sunrise
 ```
 
 #### sunset
 Returns the time for sunset today
 
-```
+```ruby
   response.sunset
 ```
 
